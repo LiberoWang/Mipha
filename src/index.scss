@@ -1,0 +1,11 @@
+#root {
+  .ant-layout {
+    min-height: 100vh;
+  
+    .ant-layout-sider {
+      min-height: 100vh;
+      max-height: 100vh;
+      overflow: scroll;
+    }
+  }
+}

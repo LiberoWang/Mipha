@@ -1,13 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const argv = require('yargs-parser')(process.argv.slice(2));
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
     vendor: [
       'react',
       'react-dom',
+      'antd',
       'regenerator-runtime/runtime',
     ],
     mipha: './src/index'
@@ -45,11 +46,8 @@ module.exports = {
       },
       {
         test: /\.(c|sc)ss$/,
-        exclude: /node_modules/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
+          'style-loader',
           'css-loader',
           'resolve-url-loader',
           {
